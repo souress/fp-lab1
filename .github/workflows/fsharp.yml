@@ -32,7 +32,7 @@ jobs:
     - name: Install linter
       run: dotnet tool install dotnet-fsharplint
     - name: Run linter
-      run: dotnet fsharplint lint ./Fsharp
+      run: dotnet fsharplint lint --file-type project .\Fsharp\Fsharp.fsproj
 
     - name: Install formatter
       run: dotnet tool install fantomas
