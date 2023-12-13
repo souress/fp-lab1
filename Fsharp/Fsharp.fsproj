@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+        <RootNamespace>func_lab1</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
+        <Content Include="Dockerfile"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Include="euler2\UtilitiesImpl.fs" />
+        <Compile Include="euler2\RecursionImpl.fs" />
+        <Compile Include="euler2\ModularImpl.fs" />
+        <Compile Include="euler2\MapImpl.fs" />
+        <Compile Include="euler2\ListGenerationImpl.fs" />
+        <Compile Include="Program.fs" />
+    </ItemGroup>
+
+</Project>
