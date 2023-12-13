@@ -30,7 +30,7 @@ let generateFibonacciSequenceList border =
     let mutable i = 1
 
     while fibonacciRec i < border do
-        list <- list @ [fibonacciRec i]
+        list <- list @ [ fibonacciRec i ]
         i <- inc i
 
     list
