@@ -2,35 +2,35 @@
 
 let isEven x = x % 2 = 0
 let inc x = x + 1
-let sum_two_digits a b = a + b
-let sum_list = List.fold (+) 0
-let filter_list predicate = List.filter predicate
-let less_than value = fun x -> x < value
+let sumTwoDigits a b = a + b
+let sumList = List.fold (+) 0
+let filterList predicate = List.filter predicate
+let lessThan value = fun x -> x < value
 
 // fibonacci sequence recursion
-let rec fibonacci_rec n =
+let rec fibonacciRec n =
     match n with
     | 1
     | 2 -> 1
-    | n -> fibonacci_rec (n - 1) + fibonacci_rec (n - 2)
+    | n -> fibonacciRec (n - 1) + fibonacciRec (n - 2)
 // ------------------------------------------------------------
 
 // fibonacci sequence tail recursion
-let rec fibonacci_tail_rec n previous current =
+let rec fibonacciTailRec n previous current =
     match n with
     | 1 -> previous
     | 2 -> current
-    | n -> fibonacci_tail_rec (n - 1) current (previous + current)
+    | n -> fibonacciTailRec (n - 1) current (previous + current)
 
-let fibonacci_tail_rec_f n = fibonacci_tail_rec n 1 1
+let fibonacciTailRecFunction n = fibonacciTailRec n 1 1
 // ------------------------------------------------------------
 
-let generate_fibonacci_sequence_list border =
+let generateFibonacciSequenceList border =
     let mutable list = []
     let mutable i = 1
 
-    while fibonacci_rec i < border do
-        list <- list @ (fibonacci_rec i) :: []
+    while fibonacciRec i < border do
+        list <- list @ [fibonacciRec i]
         i <- inc i
 
     list

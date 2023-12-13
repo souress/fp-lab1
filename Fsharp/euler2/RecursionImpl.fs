@@ -3,13 +3,13 @@
 open UtilitiesImpl
 
 // Euler problem 2 recursion
-let sum_rec border predicate =
+let sumRec border predicate =
     let mutable sum = 0
     let mutable i = 1
 
-    while fibonacci_rec i < border do
-        if (predicate (fibonacci_rec i)) then
-            sum <- sum_two_digits sum (fibonacci_rec i)
+    while fibonacciRec i < border do
+        if (predicate (fibonacciRec i)) then
+            sum <- sumTwoDigits sum (fibonacciRec i)
 
         i <- inc i
 
@@ -17,13 +17,13 @@ let sum_rec border predicate =
 // ------------------------------------------------------------
 
 // Euler problem 2 tail recursion
-let sum_tail_rec border predicate =
+let sumTailRec border predicate =
     let mutable sum = 0
     let mutable i = 1
 
-    while fibonacci_tail_rec_f i < border do
-        if (predicate (fibonacci_tail_rec_f i)) then
-            sum <- sum_two_digits sum (fibonacci_tail_rec_f i)
+    while fibonacciTailRecFunction i < border do
+        if (predicate (fibonacciTailRecFunction i)) then
+            sum <- sumTwoDigits sum (fibonacciTailRecFunction i)
 
         i <- inc i
 

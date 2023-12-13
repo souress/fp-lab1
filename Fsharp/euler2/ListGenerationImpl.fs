@@ -2,24 +2,24 @@
 
 open UtilitiesImpl
 
-let fibonacci_fold n =
+let fibonacciFold n =
     [ 1..n ] |> List.fold (fun (a, b) _ -> b, a + b) (0, 1) |> fst
 
-let sum_endless_sequence border predicate =
-    Seq.initInfinite fibonacci_fold
+let sumEndlessSequence border predicate =
+    Seq.initInfinite fibonacciFold
     |> Seq.skip 1
-    |> Seq.takeWhile (less_than border)
+    |> Seq.takeWhile (lessThan border)
     |> Seq.filter predicate
     |> Seq.toList
-    |> sum_list
+    |> sumList
 
-let sum_fibonacci_fold border predicate =
+let sumFibonacciFold border predicate =
     let mutable i = 1
     let mutable sum = 0
 
-    while fibonacci_fold i < border do
-        if (predicate (fibonacci_fold i)) then
-            sum <- sum_two_digits sum (fibonacci_fold i)
+    while fibonacciFold i < border do
+        if (predicate (fibonacciFold i)) then
+            sum <- sumTwoDigits sum (fibonacciFold i)
 
         i <- inc i
 
