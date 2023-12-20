@@ -1,4 +1,4 @@
-﻿module MapImpl
+﻿module Euler2.MapImpl
 
 open UtilitiesImpl
 

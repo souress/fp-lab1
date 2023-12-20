@@ -1,4 +1,4 @@
-﻿module ModularImpl
+﻿module Euler2.ModularImpl
 
 open UtilitiesImpl
 

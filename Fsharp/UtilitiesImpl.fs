@@ -34,3 +34,17 @@ let generateFibonacciSequenceList border =
         i <- inc i
 
     list
+// ------------------------------------------------------------
+
+let rec calculatePowersSet a b border set =
+    if float b > border then
+        set
+    else
+        calculatePowersSet a (inc b) border (Set.add (a ** float b) set)
+// ------------------------------------------------------------
+
+let rec generatePowersList a border list =
+    if a > border then
+        list
+    else
+        List.append list (generatePowersList (a + 1.0) border (Set.toList (calculatePowersSet a 2 border Set.empty)))
