@@ -33,7 +33,7 @@ jobs:
       run: dotnet restore .\Fsharp\Fsharp.fsproj
 
     - name: Install linter
-      run: dotnet tool install dotnet-fsharplint
+      run: dotnet tool install dotnet-fsharplint --version 0.21.6
     - name: Run linter
       run: dotnet fsharplint lint --file-type project .\Fsharp\Fsharp.fsproj
 
