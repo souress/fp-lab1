@@ -1,4 +1,4 @@
-﻿module ListGenerationImpl
+﻿module Euler2.ListGenerationImpl
 
 open UtilitiesImpl
 

@@ -7,7 +7,7 @@ open Euler29.ModularImpl
 open UtilitiesImpl
 open Euler2.MapImpl
 open Euler29.MapImpl
-open ListGenerationImpl
+open Euler2.ListGenerationImpl
 
 printfn "Euler 2 problem"
 let borderEuler2 = 4000000

@@ -48,3 +48,13 @@ let rec generatePowersList a border list =
         list
     else
         List.append list (generatePowersList (a + 1.0) border (Set.toList (calculatePowersSet a 2 border Set.empty)))
+// ------------------------------------------------------------
+
+let generateUsingSequence =
+    seq {
+        for a in 2I..100I do
+        for b in 2..100 -> a,b
+        }
+    |> Seq.map (fun (a,b) -> pown a b)
+    |> Seq.distinct
+    |> Seq.length
