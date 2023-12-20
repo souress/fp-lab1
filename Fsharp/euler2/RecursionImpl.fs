@@ -1,31 +1,24 @@
-﻿module RecursionImpl
+﻿module Euler2.RecursionImpl
 
-open UtilitiesImpl
+// non-tail recursion
+let rec fibonacciSumNonTailRec a b border predicate =
+    if a > border then
+        0
+    else
+        let currentTerm = if predicate a then a else 0
+        currentTerm + fibonacciSumNonTailRec b (a + b) border predicate
 
-// Euler problem 2 recursion
-let sumRec border predicate =
-    let mutable sum = 0
-    let mutable i = 1
-
-    while fibonacciRec i < border do
-        if (predicate (fibonacciRec i)) then
-            sum <- sumTwoDigits sum (fibonacciRec i)
-
-        i <- inc i
-
-    sum
+let fibonacciSumNonTailRecFunction border predicate =
+    fibonacciSumNonTailRec 0 1 border predicate
 // ------------------------------------------------------------
 
-// Euler problem 2 tail recursion
-let sumTailRec border predicate =
-    let mutable sum = 0
-    let mutable i = 1
+// tail recursion
+let rec fibonacciSumTailRec a b border predicate acc =
+    if a > border then
+        acc
+    else
+        fibonacciSumTailRec b (a + b) border predicate (if predicate a then acc + a else acc)
 
-    while fibonacciTailRecFunction i < border do
-        if (predicate (fibonacciTailRecFunction i)) then
-            sum <- sumTwoDigits sum (fibonacciTailRecFunction i)
-
-        i <- inc i
-
-    sum
+let fibonacciSumTailRecFunction border predicate =
+    fibonacciSumTailRec 0 1 border predicate 0
 // ------------------------------------------------------------
