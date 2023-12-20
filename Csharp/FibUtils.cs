@@ -28,9 +28,9 @@ public static class FibUtils
         return sum;
     }
 
-    public static int Fib(int n) => n < 2 ? n : Fib(n - 1) + Fib(n - 2);
+    private static int Fib(int n) => n < 2 ? n : Fib(n - 1) + Fib(n - 2);
 
-    public static int FibTail(int n) => FibTailRecursion(n, 1, 1);
+    private static int FibTail(int n) => FibTailRecursion(n, 1, 1);
     
     private static int FibTailRecursion(int n, int x, int y) =>
         n switch
