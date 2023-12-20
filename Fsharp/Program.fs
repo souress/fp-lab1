@@ -8,7 +8,7 @@ open MapImpl
 open ListGenerationImpl
 
 printfn "Euler 2 problem"
-let border = 4000000 //TODO from args?
+let border = 4000000
 let predicate = isEven
 printfn "Sum of the even-valued terms of Fibonacci sequence"
 printfn $"\tUsing non-tail recursion: {fibonacciSumNonTailRecFunction border predicate}"
