@@ -52,9 +52,9 @@ let rec generatePowersList a border list =
 
 let generateUsingSequence =
     seq {
-        for a in 2I..100I do
-        for b in 2..100 -> a,b
-        }
-    |> Seq.map (fun (a,b) -> pown a b)
+        for a in 2I .. 100I do
+            for b in 2..100 -> a, b
+    }
+    |> Seq.map (fun (a, b) -> pown a b)
     |> Seq.distinct
     |> Seq.length

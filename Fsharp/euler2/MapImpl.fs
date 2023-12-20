@@ -2,8 +2,7 @@
 
 open UtilitiesImpl
 
-let fibonacciWithMap n =
-    [ 1..n ] |> List.map fibonacciRec
+let fibonacciWithMap n = [ 1..n ] |> List.map fibonacciRec
 
 let sumOfFibonacciWithWithMap border predicate =
     let mutable n = 1
