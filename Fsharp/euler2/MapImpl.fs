@@ -2,7 +2,7 @@
 
 open UtilitiesImpl
 
-let fibonacciWithMap n = // TODO fix shitcode
+let fibonacciWithMap n =
     [ 1..n ] |> List.map fibonacciRec
 
 let sumOfFibonacciWithWithMap border predicate =
