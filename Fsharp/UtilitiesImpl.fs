@@ -37,17 +37,15 @@ let generateFibonacciSequenceList border =
 // ------------------------------------------------------------
 
 let rec calculatePowersSet a b border set =
-    if float b > border then
-        set
-    else
-        calculatePowersSet a (inc b) border (Set.add (a ** float b) set)
+    match float b > border with
+    | true -> set
+    | false -> calculatePowersSet a (inc b) border (Set.add (a ** float b) set)
 // ------------------------------------------------------------
 
 let rec generatePowersList a border list =
-    if a > border then
-        list
-    else
-        List.append list (generatePowersList (a + 1.0) border (Set.toList (calculatePowersSet a 2 border Set.empty)))
+    match a > border with
+    | true -> list
+    | false -> List.append list (generatePowersList (a + 1.0) border (Set.toList (calculatePowersSet a 2 border Set.empty)))
 // ------------------------------------------------------------
 
 let generateUsingSequence =

@@ -2,10 +2,14 @@
 
 // non-tail recursion
 let rec fibonacciSumNonTailRec a b border predicate =
-    if a > border then
-        0
-    else
-        let currentTerm = if predicate a then a else 0
+    match a > border with
+    | true -> 0
+    | false ->
+        let currentTerm =
+            match predicate a with
+            | true -> a
+            | false -> 0
+
         currentTerm + fibonacciSumNonTailRec b (a + b) border predicate
 
 let fibonacciSumNonTailRecFunction border predicate =
@@ -14,10 +18,17 @@ let fibonacciSumNonTailRecFunction border predicate =
 
 // tail recursion
 let rec fibonacciSumTailRec a b border predicate acc =
-    if a > border then
-        acc
-    else
-        fibonacciSumTailRec b (a + b) border predicate (if predicate a then acc + a else acc)
+    match a > border with
+    | true -> acc
+    | false ->
+        fibonacciSumTailRec
+            b
+            (a + b)
+            border
+            predicate
+            (match predicate a with
+             | true -> acc + a
+             | false -> acc)
 
 let fibonacciSumTailRecFunction border predicate =
     fibonacciSumTailRec 0 1 border predicate 0
