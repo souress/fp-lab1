@@ -25,15 +25,15 @@ let rec fibonacciTailRec n previous current =
 let fibonacciTailRecFunction n = fibonacciTailRec n 1 1
 // ------------------------------------------------------------
 
+let rec findIndexOfBorderlineFibonacciElement n border =
+    match fibonacciRec n >= border with
+    | true -> n
+    | false -> findIndexOfBorderlineFibonacciElement (n + 1) border
+// ------------------------------------------------------------
+
 let generateFibonacciSequenceList border =
-    let mutable list = []
-    let mutable i = 1
-
-    while fibonacciRec i < border do
-        list <- list @ [ fibonacciRec i ]
-        i <- inc i
-
-    list
+    let n = findIndexOfBorderlineFibonacciElement 1 border
+    [ 1..n ] |> List.map fibonacciRec
 // ------------------------------------------------------------
 
 let rec calculatePowersSet a b border set =
