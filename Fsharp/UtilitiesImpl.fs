@@ -33,7 +33,7 @@ let rec findIndexOfBorderlineFibonacciElement n border =
 
 let generateFibonacciSequenceList border =
     let n = findIndexOfBorderlineFibonacciElement 1 border
-    [ 1..n ] |> List.map fibonacciRec
+    [ 1 .. n - 1 ] |> List.map fibonacciRec
 // ------------------------------------------------------------
 
 let rec power a b =
