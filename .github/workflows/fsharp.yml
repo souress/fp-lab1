@@ -36,6 +36,8 @@ jobs:
       run: dotnet tool install dotnet-fsharplint --version 0.21.6
     - name: Run linter
       run: dotnet fsharplint lint --file-type project .\Fsharp\Fsharp.fsproj
+    - name: Run tests
+      run: dotnet test
 
     - name: Install formatter
       run: dotnet tool install fantomas
