@@ -23,6 +23,7 @@
         <Compile Include="euler29\RecursionImpl.fs" />
         <Compile Include="euler29\ModularImpl.fs" />
         <Compile Include="euler29\MapImpl.fs" />
+        <Compile Include="euler29\ListGenerationImpl.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 

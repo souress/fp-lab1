@@ -36,6 +36,11 @@ let generateFibonacciSequenceList border =
     [ 1..n ] |> List.map fibonacciRec
 // ------------------------------------------------------------
 
+let rec power a b =
+    match b = 0I with
+    | true -> 1
+    | false -> a * power a (b - 1I)
+
 let rec calculatePowersSet a b border set =
     match float b > border with
     | true -> set
@@ -45,14 +50,15 @@ let rec calculatePowersSet a b border set =
 let rec generatePowersList a border list =
     match a > border with
     | true -> list
-    | false -> List.append list (generatePowersList (a + 1.0) border (Set.toList (calculatePowersSet a 2 border Set.empty)))
+    | false ->
+        List.append list (generatePowersList (a + 1.0) border (Set.toList (calculatePowersSet a 2 border Set.empty)))
 // ------------------------------------------------------------
 
 let generateUsingSequence =
     seq {
-        for a in 2I .. 100I do
+        for a in 2..100 do
             for b in 2..100 -> a, b
     }
-    |> Seq.map (fun (a, b) -> pown a b)
+    |> Seq.map (fun (a, b) -> float a ** b)
     |> Seq.distinct
     |> Seq.length
